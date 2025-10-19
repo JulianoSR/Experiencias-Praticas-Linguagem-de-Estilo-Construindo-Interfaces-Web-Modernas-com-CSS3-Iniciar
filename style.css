@@ -1,0 +1,247 @@
+:root {
+  /* Paleta de Cores */
+  --color-primary: #2E8B57;
+  --color-secondary: #FF6F61;
+  --color-accent: #FFD700;
+  --color-neutral-light: #F5F5F5;
+  --color-neutral-dark: #333333;
+  --color-info: #17a2b8;
+  --color-success: #28a745;
+  --color-danger: #dc3545;
+
+  /* Tipografia */
+  --font-xs: 0.75rem;
+  --font-sm: 0.875rem;
+  --font-md: 1rem;
+  --font-lg: 1.25rem;
+  --font-xl: 1.5rem;
+
+  /* Espaçamento */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+}
+/* Grid principal com 12 colunas */
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-2);
+  padding: var(--space-3);
+}
+
+/* Componentes internos com Flexbox */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Breakpoints responsivos */
+@media (max-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+/* Menu principal */
+.navbar {
+  background-color: var(--color-primary);
+  padding: var(--space-2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: var(--space-2);
+}
+
+.navbar li {
+  position: relative;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: var(--font-md);
+}
+
+/* Dropdown */
+.navbar li:hover ul {
+  display: block;
+}
+
+.navbar ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  background-color: var(--color-secondary);
+  padding: var(--space-2);
+}
+
+/* Menu hambúrguer */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  background: white;
+  height: 3px;
+  margin: 4px 0;
+  width: 25px;
+}
+
+@media (max-width: 768px) {
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar.active ul {
+    display: flex;
+  }
+}
+.card {
+  background-color: white;
+  border: 1px solid var(--color-neutral-light);
+  border-radius: 8px;
+  padding: var(--space-3);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+.button {
+  padding: var(--space-2) var(--space-3);
+  border: none;
+  border-radius: 4px;
+  font-size: var(--font-md);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--color-secondary);
+}
+
+.button:focus {
+  outline: 2px solid var(--color-accent);
+}
+
+.button:active {
+  background-color: var(--color-primary);
+}
+
+.button:disabled {
+  background-color: var(--color-neutral-light);
+  cursor: not-allowed;
+}
+input, textarea, select {
+  width: 100%;
+  padding: var(--space-2);
+  border: 1px solid var(--color-neutral-light);
+  border-radius: 4px;
+  font-size: var(--font-sm);
+}
+
+input:invalid {
+  border-color: var(--color-danger);
+}
+
+input:valid {
+  border-color: var(--color-success);
+}
+.alert {
+  padding: var(--space-2);
+  border-radius: 4px;
+  margin-bottom: var(--space-2);
+  color: white;
+}
+
+.alert-success { background-color: var(--color-success); }
+.alert-danger { background-color: var(--color-danger); }
+.alert-info { background-color: var(--color-info); }
+
+.toast {
+  position: fixed;
+  bottom: var(--space-3);
+  right: var(--space-3);
+  background-color: var(--color-secondary);
+  color: white;
+  padding: var(--space-2);
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.modal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: var(--space-4);
+  border-radius: 8px;
+  max-width: 500px;
+}
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: var(--font-xs);
+  background-color: var(--color-accent);
+  color: var(--color-neutral-dark);
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 16px;
+  font-size: var(--font-sm);
+  background-color: var(--color-neutral-light);
+  color: var(--color-primary);
+  margin-right: var(--space-1);
+}
