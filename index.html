@@ -4,189 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cadastro de Usuário</title>
-  <style>
-    :root {
-      /* Paleta de Cores */
-      --color-primary: #2E8B57;
-      --color-secondary: #FF6F61;
-      --color-accent: #FFD700;
-      --color-neutral-light: #F5F5F5;
-      --color-neutral-dark: #333333;
-      --color-info: #17a2b8;
-      --color-success: #28a745;
-      --color-danger: #dc3545;
-
-      /* Tipografia */
-      --font-xs: 0.75rem;
-      --font-sm: 0.875rem;
-      --font-md: 1rem;
-      --font-lg: 1.25rem;
-      --font-xl: 1.5rem;
-
-      /* Espaçamento */
-      --space-1: 8px;
-      --space-2: 16px;
-      --space-3: 24px;
-      --space-4: 32px;
-      --space-5: 48px;
-      --space-6: 64px;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: var(--color-neutral-light);
-      color: var(--color-neutral-dark);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    header {
-      background-color: var(--color-primary);
-      color: white;
-      padding: var(--space-3);
-      text-align: center;
-      width: 100%;
-    }
-
-    main {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: var(--space-2);
-      padding: var(--space-3);
-      width: 100%;
-      max-width: 1200px;
-    }
-
-    section {
-      grid-column: span 12;
-      background-color: white;
-      padding: var(--space-3);
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    h1 {
-      font-size: var(--font-xl);
-      margin-bottom: var(--space-2);
-    }
-
-    h4 {
-      font-size: var(--font-sm);
-    }
-
-    p {
-      font-size: var(--font-md);
-      margin-bottom: var(--space-2);
-    }
-
-    .recuo {
-      text-indent: var(--space-2);
-    }
-
-    nav {
-      grid-column: span 12;
-      background-color: var(--color-secondary);
-      padding: var(--space-2);
-      border-radius: 8px;
-      margin-top: var(--space-3);
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-2);
-      justify-content: center;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: var(--font-md);
-      padding: var(--space-1) var(--space-2);
-      background-color: var(--color-primary);
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-    }
-
-    nav a:hover {
-      background-color: var(--color-accent);
-      color: var(--color-neutral-dark);
-    }
-
-    footer {
-      grid-column: span 12;
-      text-align: center;
-      margin-top: var(--space-3);
-      font-size: var(--font-sm);
-    }
-
-    @media (max-width: 992px) {
-      main {
-        grid-template-columns: repeat(8, 1fr);
-      }
-    }
-
-    @media (max-width: 768px) {
-      main {
-        grid-template-columns: repeat(4, 1fr);
-      }
-
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-
-    @media (max-width: 576px) {
-      main {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 400px) {
-      main {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="html/style.css" />
 </head>
 <body>
-  <header>
+  <header class="navbar">
     <h1>Bem-Vindo à ONG Amigos dos Animais!</h1>
-  </header>
-
-  <main>
-    <section>
-      <h1>Quem Somos?</h1>
-      <p class="recuo">
-        Em um mundo que muitas vezes ignora os mais vulneráveis, nasce uma força silenciosa e determinada: a Guardião dos Inocentes, uma ONG que transforma compaixão em ação. Nossa missão é clara — proteger, cuidar e dar voz aos animais que não podem se defender.
-      </p>
-      <p>
-        Aqui, cada latido, miado ou olhar silencioso é um chamado que atendemos com amor e responsabilidade. Resgatamos animais em situação de risco, promovemos campanhas de adoção consciente, lutamos contra maus-tratos e educamos comunidades sobre respeito e empatia.
-      </p>
-      <p>🌿 O que nos move?</p>
-      <p>O sonho de um mundo onde nenhum animal seja abandonado.</p>
-      <p>A certeza de que cada vida tem valor.</p>
-      <p>A paixão por transformar dor em esperança.</p>
-      <p>Junte-se a nós e seja parte da mudança. Porque proteger os animais é proteger o que há de mais puro em nós.</p>
-    </section>
-
     <nav>
       <ul>
         <li><a href="cadastro.html">Clique aqui e realize seu Cadastro</a></li>
         <li><a href="projetos.html">Clique aqui para ver nossos projetos</a></li>
       </ul>
     </nav>
+  </header>
 
-    <footer>
-      <p><strong>Autor:</strong> Juliano Santana Rocha</p>
-      <p><strong>Contato:</strong> contato@amigosdosanimais.org</p>
-    </footer>
+  <main>
+    <section class="card">
+      <h2>Quem Somos?</h2>
+      <p class="recuo">
+        <p>Em um mundo que muitas vezes ignora os mais vulneráveis, nasce uma força silenciosa e determinada: a Guardião dos Inocentes, uma ONG que transforma compaixão em ação. Nossa missão é clara — proteger, cuidar e dar voz aos animais que não podem se defender.
+        </p>Aqui, cada latido, miado ou olhar silencioso é um chamado que atendemos com amor e responsabilidade. Resgatamos animais em situação de risco, promovemos campanhas de adoção consciente, lutamos contra maus-tratos e educamos comunidades sobre respeito e empatia.
+      </p>
+      <p>🌿 O que nos move?</p>
+      <ul>
+        <li>O sonho de um mundo onde nenhum animal seja abandonado.</li>
+        <li>A certeza de que cada vida tem valor.</li>
+        <li>A paixão por transformar dor em esperança.</li>
+      </ul>
+      <p>Junte-se a nós e seja parte da mudança. Porque proteger os animais é proteger o que há de mais puro em nós.</p>
+    </section>
   </main>
+
+  <footer class="card">
+    <p><strong>Autor:</strong> Juliano Santana Rocha</p>
+    <p><strong>Contato:</strong> contato@amigosdosanimais.org</p>
+  </footer>
 </body>
 </html>
